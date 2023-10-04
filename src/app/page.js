@@ -18,7 +18,7 @@ export default async function Home() {
       {data.data.results.map((pokemon) => 
         <div key={pokemon.id}>
           {pokemon.name}
-          <image 
+          <Image 
           src={pokemon.image}
           width={500}
           height={500}
