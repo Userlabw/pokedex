@@ -1,9 +1,32 @@
 import Image from "next/image";
 
+const BG_COLORS = {
+    gras: 'bg-grass',
+    fire: 'bg-fire',
+    water: 'bg-water',
+    ghost: 'bg-ghost',
+    eletric: 'bg-eletric',
+    bug: 'bg-bug',
+    normal: 'bg-normal'
+}
+
+const BORDER_COLORS = {
+    gras: 'bg-grass',
+    fire: 'bg-fire',
+    water: 'bg-water',
+    ghost: 'bg-ghost',
+    eletric: 'bg-eletric',
+    bug: 'bg-bug',
+    normal: 'bg-normal'
+
+}
+
+
 export default function Pokemon({ pokemon }) {
     return (
-      <div className="group border-2 border-green-800 hover:border-green-400 rounded-2xl" key={pokemon.id}>
+      <div className={`group border-2 border-${pokemon.type} hover:border-green-400 rounded-2xl`} key={pokemon.id}>
         <span>#{String(pokemon.id).padStart(3, '0')}</span>
+        {pokemon.type}
         <Image
           src={pokemon.image}
           width={250}
